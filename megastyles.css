@@ -1,0 +1,72 @@
+        :root{
+            --t1_c: hsla(348.27, 99.12%, 44.51%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* O Header continua o mesmo */
+        header {
+            display: flex;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: center;
+            z-index: 1000;
+            font-size: 24px;
+        }
+
+        header a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            display: inline-block
+        }
+        /* --- A MÁGICA DA SOBREPOSIÇÃO ACONTECE AQUI --- */
+
+        /* A imagem fica grudada no topo (sticky) e vai para o fundo (z-index 1) */
+        .bloco-imagem {
+            position: sticky;
+            top: 0; /* Gruda no topo da tela */
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            z-index: 1; 
+        }
+
+        /* O conteúdo rola por cima, pois tem fundo sólido e z-index maior (2) */
+        .bloco-conteudo {
+            position: relative;
+            min-height: 100vh; /* Ocupa pelo menos a altura da tela */
+            background-color: #1e1e1e; /* Fundo sólido para esconder a imagem de baixo */
+            color: #ffffff;
+            z-index: 2;
+            
+            /* Centraliza o texto */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            font-family: sans-serif;
+        }
+        .faker{
+            font-family: "Anton", sans-serif;
+        }
+        .faker-a:hover{
+            color: var(--t1_c);
+            transform: scale(1.2);
+        }
+
+        /* Imagens de fundo específicas */
+        #img1 { background-image: url('https://picsum.photos/1920/1080?random=1'); }
+        #img2 { background-image: url('https://picsum.photos/1920/1080?random=2'); }
