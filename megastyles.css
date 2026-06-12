@@ -16,13 +16,15 @@
         header {
             display: flex;
             position: fixed;
+            justify-content: center;
             top: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(24, 24, 24, 0.8);
             padding: 10px;
             text-align: center;
             z-index: 1000;
-            font-size: 24px;
+            font-size: 20px;
+            transition: all 0.3s ease;
         }
 
         header a {
@@ -30,9 +32,8 @@
             text-decoration: none;
             margin: 0 15px;
             transition: all 0.3s ease;
-            display: inline-block
+            display: inline-block;
         }
-        /* --- A MÁGICA DA SOBREPOSIÇÃO ACONTECE AQUI --- */
 
         /* A imagem fica grudada no topo (sticky) e vai para o fundo (z-index 1) */
         .bloco-imagem {
@@ -52,19 +53,50 @@
             color: #ffffff;
             z-index: 2;
             
+            display: flex;
             /* Centraliza o texto */
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 50px;
+            padding: 75px;
             font-family: sans-serif;
         }
         .faker{
             font-family: "Anton", sans-serif;
         }
+        .faker1{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 90%;
+            max-width: 100%;
+            gap: 50px;
+        }
+        .coluna{
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 20px;
+        }
+        .imagem{
+            width: 30%;
+            min-width: 450px;
+            align-self: flex-end;
+            border-bottom: 1px solid var(--t1_c);
+        }
+
+        /*hovers*/
         .faker-a:hover{
             color: var(--t1_c);
-            transform: scale(1.2);
+           
+        }
+        header:hover{
+             transform: scale(1.2);
+        }
+        header a:hover{
+             transform: scale(1.2);
         }
 
         /* Imagens de fundo específicas */
