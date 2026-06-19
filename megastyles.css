@@ -1,6 +1,7 @@
 :root {
     --t1_c: hsla(348.27, 99.12%, 44.51%);
     --aspas_c: rgb(72, 88, 158);
+    --fallen_c: rgb(52, 168, 83);
 }
 
 * {
@@ -171,9 +172,52 @@ header a:hover {
 #img2 { background-image: url('https://picsum.photos/1920/1080?random=2'); }
 
 
-/* ========================================================
-    Suporte para mobile (por favor da certo)
-   ======================================================== */
+/* FalleN */
+
+.fallen {
+    font-family: "Anton", sans-serif;
+}
+
+.titulo-fallen {
+    font-size: 4rem;
+    color: var(--fallen_c);
+    align-self: flex-start;
+}
+
+.subtitulo-fallen {
+    font-size: 2rem;
+    color: var(--fallen_c);
+}
+
+.fallen-bloco {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    gap: 50px;
+}
+
+.imagem-fallen {
+    width: 35%;
+    align-self: flex-end;
+    border-bottom: 2px solid var(--fallen_c);
+}
+
+#fallen-trigger {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+#fallen-trigger:hover {
+    filter: brightness(1.15) drop-shadow(0 0 10px var(--fallen_c));
+}
+
+.fallen-a:hover {
+    color: var(--fallen_c);
+}
+
+/* mobile */
 
 @media (max-width: 992px) {
     /* Desativa o zoom maluco do header inteiro no mobile */
@@ -224,7 +268,28 @@ header a:hover {
     .imagem-aspas {
         width: 80%;
         max-width: 350px;
-        align-self: center; /* Tira do canto (flex-end) e coloca no meio */
+        align-self: center;
+    }
+
+    .fallen-bloco {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .titulo-fallen {
+        align-self: center;
+        font-size: 3rem;
+    }
+
+    .subtitulo-fallen {
+        font-size: 1.5rem;
+    }
+
+    .imagem-fallen {
+        width: 80%;
+        max-width: 350px;
+        align-self: center;
     }
     
 }
